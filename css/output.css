@@ -13,35 +13,36 @@ header {
   background-color: #2C2F33;
 }
 header .logo {
-  width: 30%;
+  width: 40%;
 }
-header div {
+header .searchNav {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  align-items: center;
+  width: 60%;
 }
-header .searchbar {
+header .searchNav .searchbar {
   display: flex;
-  width: 25%;
+  width: 40%;
 }
-header .searchbar ::placeholder {
+header .searchNav .searchbar ::placeholder {
   color: black;
 }
-header .searchbar input {
+header .searchNav .searchbar input {
   border: none;
   width: 100%;
 }
-header .searchbar .searchbtn {
+header .searchNav .searchbar .searchbtn {
   background-color: #0078F3;
   padding: 5px 15px;
 }
-header .searchbar .searchbtn a {
+header .searchNav .searchbar .searchbtn a {
   color: white;
 }
-header nav {
-  width: 30%;
+header .searchNav nav {
+  width: 60%;
 }
-header nav ul {
+header .searchNav nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

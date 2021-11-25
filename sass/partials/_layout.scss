@@ -16,48 +16,53 @@ header {
     background-color: variables.$colorNav;
 
     .logo {
-        width: 30%;
+        width: 40%;
     }
 
-    div {
+    .searchNav {
         display: flex;
         justify-content: space-between;
-        width: 70%;
-    }
+        align-items: center;
+        width: 60%;
 
-    .searchbar {
-        display: flex;
-        width: 25%;
 
-        ::placeholder {
-            color: black;
-        }
-
-        input {
-            border: none;
-            width: 100%;
-        }
-
-        .searchbtn {
-            background-color: variables.$ColorMain;
-            padding: 5px 15px;
-
-            a {
-                color: white;
+        .searchbar {
+            display: flex;
+            width: 40%;
+    
+            ::placeholder {
+                color: black;
+            }
+    
+            input {
+                border: none;
+                width: 100%;
+            }
+    
+            .searchbtn {
+                background-color: variables.$ColorMain;
+                padding: 5px 15px;
+    
+                a {
+                    color: white;
+                }
             }
         }
-    }
-
-    nav {
-        width: 30%;
-
-        ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            color: white;
-
+    
+        nav {
+            width: 60%;
+    
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                color: white;
+    
+            }
         }
+
+
     }
+ 
 }
