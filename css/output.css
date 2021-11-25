@@ -2,6 +2,51 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2C2F33;
+}
+header .logo {
+  width: 30%;
+}
+header div {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+header .searchbar {
+  display: flex;
+  width: 25%;
+}
+header .searchbar ::placeholder {
+  color: black;
+}
+header .searchbar input {
+  border: none;
+  width: 100%;
+}
+header .searchbar .searchbtn {
+  background-color: #0078F3;
+  padding: 5px 15px;
+}
+header .searchbar .searchbtn a {
+  color: white;
+}
+header nav {
+  width: 30%;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
 }
 
 /*# sourceMappingURL=output.css.map */
