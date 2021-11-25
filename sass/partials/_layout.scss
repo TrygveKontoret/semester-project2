@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+body {
+    background-color: variables.$colorBackground;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -24,7 +28,6 @@ header {
         justify-content: space-between;
         align-items: center;
         width: 60%;
-
 
         .searchbar {
             display: flex;
@@ -62,7 +65,21 @@ header {
             }
         }
 
-
     }
  
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    background-image: url(../../media/gpu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+        color: white;
+        margin: 200px auto;
+        text-align: center;
+    }
 }

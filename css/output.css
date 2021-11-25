@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+body {
+  background-color: #222529;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -48,6 +52,20 @@ header .searchNav nav ul {
   justify-content: space-evenly;
   align-items: center;
   color: white;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  background-image: url(../../media/gpu.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero h1 {
+  color: white;
+  margin: 200px auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=output.css.map */
