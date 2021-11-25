@@ -50,9 +50,13 @@ header {
                 background-color: variables.$ColorMain;
                 padding: 5px 15px;
     
-                a {
+                p {
                     color: white;
                 }
+            }
+
+            .searchbtn:hover {
+                cursor: pointer;
             }
         }
     

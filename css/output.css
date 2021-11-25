@@ -44,8 +44,11 @@ header .searchNav .searchbar .searchbtn {
   background-color: #0078F3;
   padding: 5px 15px;
 }
-header .searchNav .searchbar .searchbtn a {
+header .searchNav .searchbar .searchbtn p {
   color: white;
+}
+header .searchNav .searchbar .searchbtn:hover {
+  cursor: pointer;
 }
 header .searchNav nav {
   width: 60%;
