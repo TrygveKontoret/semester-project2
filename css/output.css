@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+a {
+  color: white;
+}
+
 body {
   background-color: #222529;
 }
@@ -53,6 +57,9 @@ header .searchNav nav ul {
   align-items: center;
   color: white;
 }
+header .searchNav nav ul #active {
+  border-bottom: #0078F3 2px solid;
+}
 
 .hero {
   display: flex;
@@ -66,6 +73,40 @@ header .searchNav nav ul {
   color: white;
   margin: 200px auto;
   text-align: center;
+  font-size: 40px;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  margin: 10% auto;
+}
+.textbox h2 {
+  color: #0078F3;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+.textbox p {
+  color: white;
+  width: 50%;
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #1C1E21;
+}
+.featured .featured-content {
+  width: 70%;
+  margin: 0 auto;
+}
+.featured h2 {
+  color: white;
+  padding: 50px 0;
 }
 
 /*# sourceMappingURL=output.css.map */
