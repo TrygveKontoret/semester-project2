@@ -83,7 +83,7 @@ header .searchNav nav ul #active {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 70%;
+  width: 80%;
   margin: 10% auto;
 }
 .textbox h2 {
@@ -104,12 +104,25 @@ header .searchNav nav ul #active {
   background-color: #1C1E21;
 }
 .featured .featured-content {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
-.featured h2 {
+.featured .featured-content h2 {
   color: white;
   padding: 50px 0;
+}
+.featured .featured-content .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.featured .featured-content .container .card {
+  width: 300px;
+  color: white;
+  border: white 2px solid;
+}
+.featured .featured-content .container .card img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=output.css.map */
