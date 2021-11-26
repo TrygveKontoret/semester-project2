@@ -48,8 +48,8 @@ export const showProducts = (item) => {
         <div class="card">
             <img src="${img_url}" alt="${title}">
             <h4>${title}</h4>
+            <p class="stars">${starRating(rating)}</p>
             <p>£ ${price}</p>
-            <p>${starRating(rating)}</p>
             <button>Add to cart</button>
         </div>
     `
