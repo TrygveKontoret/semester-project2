@@ -1,5 +1,6 @@
 @use './mixins';
 @use './variables';
+@use './products';
  
 * {
     margin: 0;
@@ -7,6 +8,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: variables.$poppins;
 }
 
 a {
@@ -114,14 +116,14 @@ header {
 }
 
 
-.featured {
+.products {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     background-color: variables.$colorFeatured;
 
-    .featured-content {
+    .content {
         width: 80%;
         margin: 0 auto;
 
@@ -147,7 +149,7 @@ header {
 
                 h4 {
                     padding: 10px 0 5px 0;
-                    font-size: 20px;
+                    font-size: 18px;
                 }
 
                 .stars {
@@ -181,5 +183,14 @@ header {
                 border: 2px solid white;
             }
         }
+    }
+}
+
+.all {
+    background-color: variables.$colorBackground;
+
+    h1 {
+        color: white;
+        padding: 50px 0;
     }
 }
