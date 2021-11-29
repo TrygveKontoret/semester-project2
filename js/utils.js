@@ -52,9 +52,5 @@ export const showProducts = (item) => {
             <p>£ ${price}</p>
             <button>Add to cart</button>
         </div>
-    `
-
-    
+    `   
 }
-
-
