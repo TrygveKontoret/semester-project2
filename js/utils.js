@@ -42,15 +42,17 @@ const starRating = (rating) => {
 }
 
 export const showProducts = (item) => {
-    const { img_url, title, price, rating } = item;
+    const { img_url, title, price, rating, id } = item;
 
     return `
-        <div class="card">
-            <img src="${img_url}" alt="${title}">
-            <h4>${title}</h4>
-            <p class="stars">${starRating(rating)}</p>
-            <p>£ ${price}</p>
-            <button>Add to cart</button>
-        </div>
+        <a href="detail.html?id=${id}">
+            <div class="card">
+                <img src="${img_url}" alt="${title}">
+                <h4>${title}</h4>
+                <p class="stars">${starRating(rating)}</p>
+                <p>£ ${price}</p>
+                <button>Add to cart</button>
+            </div>
+        </a>
     `   
 }

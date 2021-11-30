@@ -37,6 +37,7 @@ header .searchNav .searchbar {
 }
 header .searchNav .searchbar ::placeholder {
   color: black;
+  padding-left: 15px;
 }
 header .searchNav .searchbar input {
   border: none;
@@ -122,7 +123,6 @@ header .searchNav nav ul #active {
   width: 250px;
   color: white;
   margin-bottom: 50px;
-  border: 2px solid transparent;
 }
 .products .content .container .card img {
   width: 100%;
@@ -150,15 +150,20 @@ header .searchNav nav ul #active {
 .products .content .container .card button:hover {
   transition: 0.5s;
   background-color: #0078F3;
-  cursor: pointer;
+}
+.products .content .container .card button:active {
+  transform: scale(0.9);
 }
 .products .content .container .card:hover {
   transition: 0.5s;
-  border: 2px solid white;
+  transform: scale(1.1);
 }
 
 .all {
   background-color: #222529;
+}
+.all .card {
+  margin: 0px 30px;
 }
 .all h1 {
   color: white;

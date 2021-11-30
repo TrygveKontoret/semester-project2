@@ -40,6 +40,8 @@ header {
     
             ::placeholder {
                 color: black;
+                padding-left: 15px;
+        
             }
     
             input {
@@ -140,7 +142,7 @@ header {
                 width: 250px;
                 color: white;
                 margin-bottom: 50px;
-                border: 2px solid transparent;
+                // border: 2px solid transparent;
 
                 img {
                     width: 100%;
@@ -173,13 +175,17 @@ header {
                 button:hover {
                     transition: 0.5s;
                     background-color: variables.$ColorMain;
-                    cursor: pointer;
+                }
+
+                button:active {
+                    transform: scale(0.9);
                 }
             }
 
             .card:hover {
                 transition: 0.5s;
-                border: 2px solid white;
+                // border: 2px solid white;
+                transform: scale(1.1);
             }
         }
     }
@@ -187,6 +193,14 @@ header {
 
 .all {
     background-color: variables.$colorBackground;
+
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+
+    .card {
+        margin: 0px 30px;
+    }
 
     h1 {
         color: white;
