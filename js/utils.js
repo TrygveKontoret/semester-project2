@@ -6,7 +6,7 @@ export const fetchProducts = async (url) => {
     return await response.json();
 };
 
-const starRating = (rating) => {
+export const starRating = (rating) => {
     switch(rating) {
         case 0:
             return (
