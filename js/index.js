@@ -26,3 +26,29 @@ const render = () => {
 }
 
 getProducts();
+
+
+const input = document.querySelector('input');
+const search = document.querySelector('.searchbtn');
+
+let filterValue;
+let filterTitle;
+
+search.addEventListener('click', () => {
+    // filterValue = input.value.trim();
+    // container.innerHTML = '';
+    
+    
+    filterValue = input.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+    container.innerHTML = '';
+
+
+    filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
+    filterTitle.forEach((product) => {
+        container.innerHTML += showProducts(product);
+    })
+
+
+})

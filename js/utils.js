@@ -56,3 +56,18 @@ export const showProducts = (item) => {
         </a>
     `   
 }
+
+export const findIndex = (array, item) => {
+    return array.map((x) => {
+        return x.id
+    }).indexOf(item.id)
+};
+
+export const containItem = (obj, array) => {
+    for (const item of array) {
+        if (item.id === obj.id) {
+            return true;
+        }
+    }
+    return false;
+};
