@@ -55,7 +55,6 @@ const render = () => {
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
 
-            window.sessionStorage.removeItem('fubar');
         
     })}
     
@@ -64,6 +63,9 @@ const render = () => {
         for (const product of data) {
             container.innerHTML += showProducts(product);
         }
+        
 
     }
+
+    window.sessionStorage.removeItem('fubar');
 }
