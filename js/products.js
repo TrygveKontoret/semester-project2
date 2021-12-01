@@ -39,6 +39,8 @@ search.addEventListener('click', () => {
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
         filterTitle.forEach((product) => {
         container.innerHTML += showProducts(product);
+
+        window.sessionStorage.removeItem('fubar');
     })
 })
 
