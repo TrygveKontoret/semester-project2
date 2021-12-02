@@ -1,5 +1,5 @@
 import { url } from './api.js';
-import { fetchProducts, showProducts, findIndex } from './utils.js';
+import { fetchProducts, showProducts, findIndex, containItem } from './utils.js';
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!shoppingCart){
@@ -25,11 +25,19 @@ const render = () => {
 
     for (const product of data) {
         if (product.featured) {
-        container.innerHTML += showProducts(product);
+            container.innerHTML += showProducts(product);
         }
+        
     }
+    // for (const product of data) {
+        
+    //     container.innerHTML += showProducts(product);
+        
+        
+    // }
 
     addToCart(data);
+    // addFav(data)
 }
 
 getProducts();
@@ -76,6 +84,23 @@ const addToCart = (array) => {
     })
 }
 
+// const addFav = (array) => {
+
+//     array.forEach((item) => {
+//         document.getElementById(`${item.id}`).addEventListener('click', () => {
+//             if (containItem(item, shoppingCart)) {
+//                 shoppingCart.splice(findIndex(collection, item), 1);
+//                 window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+//                 document.getElementById(`${item.id}`).innerHTML = "Add to favourites";
+//             }
+//             else {
+//                 shoppingCart.push(data[findIndex(data, item)]);
+//                 window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+//                 document.getElementById(`${item.id}`).innerHTML = "Remove from favourites";
+//             }
+//         })
+//     })
+// };
 
 
 
