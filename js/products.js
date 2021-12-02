@@ -1,5 +1,5 @@
 import { url } from './api.js';
-import { fetchProducts, showProducts } from './utils.js';
+import { fetchProducts, showProducts, findIndex, containItem } from './utils.js';
 
 console.log(await fetchProducts(url));
 
@@ -24,12 +24,15 @@ const getProducts = async () => {
 //     for (const product of data) {
 //         container.innerHTML += showProducts(product);
 //     }
+//     if (container.innerHTML === '') {
+//         container.innerHTML = "aslkdsadjaksd"
+//     }
 // }
 
-getProducts();
+
 
 let filterValue;
-let filterTitle;
+let filterTitle = [];
 
 
 search.addEventListener('click', () => {
@@ -42,11 +45,18 @@ search.addEventListener('click', () => {
 
         
 
-        window.sessionStorage.removeItem('fubar');
+        // window.sessionStorage.removeItem('fubar');
             
         
     })
-    
+    // if (filterTitle === []) {
+    //     container.innerHTML = "aslkdsadjaksd"
+    // }
+
+    console.log(filterTitle)
+
+    addToCart(filterTitle);
+    // addFav(filterTitle)
     
 })
 
@@ -61,24 +71,72 @@ const render = () => {
     
     if (filterValue = window.sessionStorage.getItem('fubar', filterValue)){
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
+        console.log(filterTitle)
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
             
         })
-        
+
+        // if(container.innerHTML = ""){
+        //     container.innerHTML = "jfoijjÆOKdj"
+        // }
+
     }
 
     else {
         for (const product of data) {
             container.innerHTML += showProducts(product);
         }
-
+        // if(filterTitle === []){
+        //     container.innerHTML = "bitch du er en bitch"
+        // }
     }
-
-    // if (container.innerHTML === '') {
-    //     container.innerHTML = "aslkdsadjaksd"
+    // console.log(filterTitle)
+    // if(filterTitle === []){
+    //     container.innerHTML = "Dude bare funger din fitte"
     // }
 
     window.sessionStorage.removeItem('fubar');
+    addToCart(data);
+    // addFav(data)
 }
 
+getProducts();
+
+const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+if(!shoppingCart){
+    localStorage.setItem("cart", JSON.stringify([]))
+}
+
+const addToCart = (array) => {
+    array.forEach((item) => {
+        document.getElementById(`${item.id}`).addEventListener('click', () => {
+        shoppingCart.push(data[findIndex(data,item)]);
+        window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+    })
+    })
+    
+    
+    
+}
+
+
+// const collection = JSON.parse(window.localStorage.getItem('itemArray'));
+
+// const addFav = (array) => {
+
+//     array.forEach((item) => {
+//         document.getElementById(`${item.id}`).addEventListener('click', () => {
+//             if (containItem(item, collection)) {
+//                 collection.splice(findIndex(collection, item), 1);
+//                 window.localStorage.setItem('itemArray', JSON.stringify(collection));
+//                 document.getElementById(`${item.id}`).innerHTML = "Add to cart";
+//             }
+//             else {
+//                 collection.push(data[findIndex(data, item)]);
+//                 window.localStorage.setItem('itemArray', JSON.stringify(collection));
+//                 document.getElementById(`${item.id}`).innerHTML = "Remove from cart";
+//             }
+//         })
+//     })
+// };

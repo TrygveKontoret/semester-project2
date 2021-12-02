@@ -50,7 +50,7 @@ const render = () => {
             </div>
         `
 
-        modal.innerHTML = `<img  src ="${product.img_url}"/>`
+        modal.innerHTML = `<img src ="${product.img_url}"/>`
     }
     funkyModal();
 }
@@ -96,7 +96,7 @@ search.addEventListener('click', () => {
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-    container.innerHTML = '';
+    // container.innerHTML = '';
 
 
     filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);

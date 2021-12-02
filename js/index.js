@@ -1,5 +1,10 @@
 import { url } from './api.js';
-import { fetchProducts, showProducts } from './utils.js';
+import { fetchProducts, showProducts, findIndex } from './utils.js';
+
+const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+if(!shoppingCart){
+    localStorage.setItem('cart', JSON.stringify([]))
+}
 
 console.log(await fetchProducts(url));
 
@@ -23,6 +28,8 @@ const render = () => {
         container.innerHTML += showProducts(product);
         }
     }
+
+    addToCart(data);
 }
 
 getProducts();
@@ -42,7 +49,7 @@ search.addEventListener('click', () => {
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-    container.innerHTML = '';
+    // container.innerHTML = '';
 
 
     filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
@@ -50,5 +57,36 @@ search.addEventListener('click', () => {
         container.innerHTML += showProducts(product);
     })
 
-
+    // addToCart(filterTitle);
 })
+
+// const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+// if(!shoppingCart){
+//     localStorage.setItem("cart", JSON.stringify([]))
+// }
+
+
+
+const addToCart = (array) => {
+    array.forEach((item) => {
+        document.getElementById(`${item.id}`).addEventListener('click', () => {
+            shoppingCart.push(data[findIndex(data, item)]);
+            window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+        })
+    })
+}
+
+
+
+
+// const addToCart = (array) => {
+//     array.forEach((item) => {
+//         document.getElementById(`${item.id}`).addEventListener('click', () => {
+//             shoppingCart.push(data[findIndex(data,item)]);
+//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+//     })
+//     })
+    
+    
+    
+// }

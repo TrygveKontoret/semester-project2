@@ -45,17 +45,29 @@ export const showProducts = (item) => {
     const { img_url, title, price, rating, id } = item;
 
     return `
-        <a href="detail.html?id=${id}">
+        
             <div class="card">
                 <img src="${img_url}" alt="${title}">
                 <h4>${title}</h4>
                 <p class="stars">${starRating(rating)}</p>
                 <p>£ ${price}</p>
-                <button>Add to cart</button>
+                <button id="${id}">Add to cart</button>
             </div>
-        </a>
+        
     `   
 }
+
+// `
+//         <a href="detail.html?id=${id}">
+//             <div class="card">
+//                 <img src="${img_url}" alt="${title}">
+//                 <h4>${title}</h4>
+//                 <p class="stars">${starRating(rating)}</p>
+//                 <p>£ ${price}</p>
+//                 <button id="${id}">Add to cart</button>
+//             </div>
+//         </a>
+//     `   
 
 export const findIndex = (array, item) => {
     return array.map((x) => {
@@ -71,3 +83,16 @@ export const containItem = (obj, array) => {
     }
     return false;
 };
+
+const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+
+
+// export const addToCart = (array) => {
+
+//     for (const item of array) {
+//         document.getElementById(`${item.id}`).addEventListener('click', () => {
+//             shoppingCart.push(showProducts[findIndex(showProducts,item)]);
+//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+//         })
+//     }
+// }
