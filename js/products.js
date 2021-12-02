@@ -40,32 +40,45 @@ search.addEventListener('click', () => {
         filterTitle.forEach((product) => {
         container.innerHTML += showProducts(product);
 
+        
+
         window.sessionStorage.removeItem('fubar');
+            
+        
     })
+    
+    
 })
+
+// if (container.innerHTML === "") {
+//     container.innerHTML === `<p>FUNK DA FOR FAEN</p>`
+// }
 
 
 const render = () => {
     filterValue = input.value.trim();
-    container.innerHTML = '';
+    // container.innerHTML = '';
+    
     if (filterValue = window.sessionStorage.getItem('fubar', filterValue)){
-
-
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
-
+            
+        })
         
-    })}
-    
+    }
 
     else {
         for (const product of data) {
             container.innerHTML += showProducts(product);
         }
-        
 
     }
 
+    // if (container.innerHTML === '') {
+    //     container.innerHTML = "aslkdsadjaksd"
+    // }
+
     window.sessionStorage.removeItem('fubar');
 }
+
