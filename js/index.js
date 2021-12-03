@@ -37,7 +37,6 @@ const render = () => {
     // }
 
     addToCart(data);
-    // addFav(data)
 }
 
 getProducts();
@@ -49,31 +48,11 @@ const search = document.querySelector('.searchbtn');
 let filterValue;
 let filterTitle;
 
-search.addEventListener('click', () => {
-    // filterValue = input.value.trim();
-    // container.innerHTML = '';
-    
-    
+search.addEventListener('click', () => { 
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-    // container.innerHTML = '';
-
-
-    filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
-    filterTitle.forEach((product) => {
-        container.innerHTML += showProducts(product);
-    })
-
-    // addToCart(filterTitle);
 })
-
-// const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
-// if(!shoppingCart){
-//     localStorage.setItem("cart", JSON.stringify([]))
-// }
-
-
 
 const addToCart = (array) => {
     array.forEach((item) => {
@@ -83,35 +62,3 @@ const addToCart = (array) => {
         })
     })
 }
-
-// const addFav = (array) => {
-
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             if (containItem(item, shoppingCart)) {
-//                 shoppingCart.splice(findIndex(collection, item), 1);
-//                 window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//                 document.getElementById(`${item.id}`).innerHTML = "Add to favourites";
-//             }
-//             else {
-//                 shoppingCart.push(data[findIndex(data, item)]);
-//                 window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//                 document.getElementById(`${item.id}`).innerHTML = "Remove from favourites";
-//             }
-//         })
-//     })
-// };
-
-
-
-// const addToCart = (array) => {
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             shoppingCart.push(data[findIndex(data,item)]);
-//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//     })
-//     })
-    
-    
-    
-// }

@@ -57,10 +57,6 @@ const render = () => {
 
 
 const funkyModal = ()=> {
-    // const funky = document.querySelector(".bigger");
-    // modal.style.display = "flex";
-    // body.classList.add("modalBody");
-    // document.documentElement.scrollTop = "0";
     for (const imgmodal of data) {
         document.getElementById(`${imgmodal.id}`).addEventListener('click', () => {
             const funky = document.querySelector(".bigger");
@@ -89,22 +85,9 @@ let filterValue;
 let filterTitle;
 
 search.addEventListener('click', () => {
-    // filterValue = input.value.trim();
-    // container.innerHTML = '';
-    
-    
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-    // container.innerHTML = '';
-
-
-    filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
-    filterTitle.forEach((product) => {
-        container.innerHTML += showProducts(product);
-    })
-
-
 });
 
 

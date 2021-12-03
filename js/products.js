@@ -98,7 +98,6 @@ const render = () => {
 
     window.sessionStorage.removeItem('fubar');
     addToCart(data);
-    // addFav(data)
 }
 
 getProducts();
@@ -119,24 +118,3 @@ const addToCart = (array) => {
     
     
 }
-
-
-// const collection = JSON.parse(window.localStorage.getItem('itemArray'));
-
-// const addFav = (array) => {
-
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             if (containItem(item, collection)) {
-//                 collection.splice(findIndex(collection, item), 1);
-//                 window.localStorage.setItem('itemArray', JSON.stringify(collection));
-//                 document.getElementById(`${item.id}`).innerHTML = "Add to cart";
-//             }
-//             else {
-//                 collection.push(data[findIndex(data, item)]);
-//                 window.localStorage.setItem('itemArray', JSON.stringify(collection));
-//                 document.getElementById(`${item.id}`).innerHTML = "Remove from cart";
-//             }
-//         })
-//     })
-// };
