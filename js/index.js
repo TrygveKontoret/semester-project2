@@ -46,7 +46,6 @@ const input = document.querySelector('input');
 const search = document.querySelector('.searchbtn');
 
 let filterValue;
-let filterTitle;
 
 search.addEventListener('click', () => { 
     filterValue = input.value.trim();
@@ -56,9 +55,11 @@ search.addEventListener('click', () => {
 
 const addToCart = (array) => {
     array.forEach((item) => {
-        document.getElementById(`${item.id}`).addEventListener('click', () => {
+        if (item.featured) {
+            document.getElementById(`${item.id}`).addEventListener('click', () => {
             shoppingCart.push(data[findIndex(data, item)]);
             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-        })
+        })}
+        
     })
 }
