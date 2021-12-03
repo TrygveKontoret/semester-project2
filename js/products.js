@@ -55,9 +55,7 @@ search.addEventListener('click', () => {
 
     console.log(filterTitle)
 
-    addToCart(filterTitle);
-    // addFav(filterTitle)
-    
+    addToCart(filterTitle);    
 })
 
 // if (container.innerHTML === "") {
@@ -80,7 +78,7 @@ const render = () => {
         // if(container.innerHTML = ""){
         //     container.innerHTML = "jfoijjÆOKdj"
         // }
-
+        
     }
 
     else {

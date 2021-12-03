@@ -29,13 +29,6 @@ const render = () => {
         }
         
     }
-    // for (const product of data) {
-        
-    //     container.innerHTML += showProducts(product);
-        
-        
-    // }
-
     addToCart(data);
 }
 
