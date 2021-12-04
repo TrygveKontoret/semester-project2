@@ -27,7 +27,6 @@ const render = () => {
         if (product.featured) {
             container.innerHTML += showProducts(product);
         }
-        
     }
     addToCart(data);
 }

@@ -41,7 +41,7 @@ search.addEventListener('click', () => {
 
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
         filterTitle.forEach((product) => {
-        container.innerHTML += showProducts(product);
+            container.innerHTML += showProducts(product);
 
         
 
@@ -55,7 +55,7 @@ search.addEventListener('click', () => {
 
     console.log(filterTitle)
 
-    addToCart(filterTitle);    
+    // addToCart(filterTitle);    
 })
 
 // if (container.innerHTML === "") {
@@ -64,11 +64,13 @@ search.addEventListener('click', () => {
 
 
 const render = () => {
+    
     filterValue = input.value.trim();
     // container.innerHTML = '';
     
     if (filterValue = window.sessionStorage.getItem('fubar', filterValue)){
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
+        // filterTitle = data.filter(product => product.title.toLowerCase().includes(filterValue.toLowerCase()));
         console.log(filterTitle)
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
@@ -93,9 +95,10 @@ const render = () => {
     // if(filterTitle === []){
     //     container.innerHTML = "Dude bare funger din fitte"
     // }
-
+    
     window.sessionStorage.removeItem('fubar');
-    addToCart(data);
+
+    addToCart(filterTitle);
 }
 
 getProducts();
@@ -112,7 +115,4 @@ const addToCart = (array) => {
         window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
     })
     })
-    
-    
-    
 }
