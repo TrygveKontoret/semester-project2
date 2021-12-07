@@ -38,11 +38,12 @@ header .searchNav .searchbar {
 }
 header .searchNav .searchbar ::placeholder {
   color: black;
-  padding-left: 15px;
 }
 header .searchNav .searchbar input {
   border: none;
   width: 100%;
+  outline: none;
+  padding-left: 15px;
 }
 header .searchNav .searchbar .searchbtn {
   background-color: #0078F3;

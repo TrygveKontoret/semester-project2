@@ -41,13 +41,15 @@ header {
     
             ::placeholder {
                 color: black;
-                padding-left: 15px;
+                // padding-left: 15px;
         
             }
     
             input {
                 border: none;
                 width: 100%;
+                outline: none;
+                padding-left: 15px;
             }
     
             .searchbtn {
