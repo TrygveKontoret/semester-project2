@@ -87,35 +87,13 @@ export const containItem = (obj, array) => {
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 
-
-// export const addToCart = (array) => {
-
-//     for (const item of array) {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             shoppingCart.push(showProducts[findIndex(showProducts,item)]);
-//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//         })
-//     }
-// }
-
-
-// export const addToCart = (array) => {
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             shoppingCart.push(data[findIndex(data, item)]);
-//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//         })
-//     })
-// }
-
-// export const addToCart = (array) => {
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//         shoppingCart.push(showProducts(item)[findIndex(showProducts(item),item)]);
-//         window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//     })
-//     })
-    
-    
-    
-// }
+// module.exports = ({ env }) => ({
+//     host: env('HOST', '0.0.0.0'),
+//     port: env.int('PORT', 1337),
+//     admin: {
+//       auth: {
+//         secret: env('ADMIN_JWT_SECRET', '62985b4a18a64b3ecbd75c779e2a56cc'),
+//       },
+//     },
+//   });
+  
