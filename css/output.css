@@ -241,4 +241,33 @@ button:active {
   cursor: pointer;
 }
 
+.cartCont {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cartCont .card {
+  width: 250px;
+  color: white;
+  margin-bottom: 50px;
+}
+.cartCont .card img {
+  width: 100%;
+}
+.cartCont .card h4 {
+  padding: 10px 0 5px 0;
+  font-size: 18px;
+}
+.cartCont .card .stars {
+  padding-bottom: 10px;
+}
+.cartCont .card p {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.cartCont .card:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
 /*# sourceMappingURL=output.css.map */

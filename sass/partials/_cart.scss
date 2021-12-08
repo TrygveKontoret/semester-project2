@@ -1,0 +1,36 @@
+.cartCont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .card {
+        width: 250px;
+        color: white;
+        margin-bottom: 50px;
+        // border: 2px solid transparent;
+
+        img {
+            width: 100%;
+        }
+
+        h4 {
+            padding: 10px 0 5px 0;
+            font-size: 18px;
+        }
+
+        .stars {
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 25px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .card:hover {
+        transition: 0.5s;
+        // border: 2px solid white;
+        transform: scale(1.1);
+    }
+}

@@ -55,7 +55,7 @@ search.addEventListener('click', () => {
 
     console.log(filterTitle)
 
-    // addToCart(filterTitle);    
+    addToCart(filterTitle);    
 })
 
 // if (container.innerHTML === "") {
@@ -74,8 +74,8 @@ const render = () => {
         console.log(filterTitle)
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
-            
         })
+        
 
         // if(container.innerHTML = ""){
         //     container.innerHTML = "jfoijjÆOKdj"
@@ -90,6 +90,7 @@ const render = () => {
         // if(filterTitle === []){
         //     container.innerHTML = "bitch du er en bitch"
         // }
+
     }
     // console.log(filterTitle)
     // if(filterTitle === []){
@@ -99,6 +100,7 @@ const render = () => {
     window.sessionStorage.removeItem('fubar');
 
     addToCart(filterTitle);
+    addToCart(data)
 }
 
 getProducts();
