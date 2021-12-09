@@ -9,14 +9,37 @@ if(!shoppingCart){
 
 const getCart = JSON.parse(window.localStorage.getItem('cart'));
 
+const price = () => {
+    const priceList = getCart.map((item)=>{
+        return item.price 
+    })
+
+    if (priceList.length === 0) {
+        return `0`;
+    }
+    console.log(priceList)
+
+    const reducer = (x, y) => x + y;
+
+    return priceList.reduce(reducer)
+
+    
+}
+
+
+
+
 const remove = () => {
     for (const item of getCart) {
         document.getElementById(`${item.id}`).addEventListener('click', () => {
             getCart.splice(findIndex(getCart, item), 1);
             window.localStorage.setItem('cart', JSON.stringify(getCart));
             cart();
+            price();
+            console.log(price());
         })
-    }
+    } 
+    
 }
 
 const cart = () => {
@@ -46,12 +69,8 @@ const cart = () => {
     remove();
 }
 
-const price = () => {
-    for (const item of getCart) {
-        const sum = item.price;
-    }
-}
+
 
 cart();
-
+price();
 console.log(price());
