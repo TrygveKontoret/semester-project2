@@ -44,19 +44,8 @@ export const starRating = (rating) => {
 export const showProducts = (item) => {
     const { img_url, title, price, rating, id } = item;
 
-    return `
-        
-            <div class="card">
-                <img src="${img_url}" alt="${title}">
-                <h4>${title}</h4>
-                <p class="stars">${starRating(rating)}</p>
-                <p>£ ${price}</p>
-                <button id="${id}">Add to cart</button>
-            </div>
-        
-    `   
     // return `
-    //     <a href="detail.html?id=${id}">
+        
     //         <div class="card">
     //             <img src="${img_url}" alt="${title}">
     //             <h4>${title}</h4>
@@ -64,8 +53,22 @@ export const showProducts = (item) => {
     //             <p>£ ${price}</p>
     //             <button id="${id}">Add to cart</button>
     //         </div>
-    //     </a>
+        
     // `   
+
+    
+    return `
+            <div class="card">
+                <a href="detail.html?id=${id}">
+                    <img src="${img_url}" alt="${title}">
+                    <h4>${title}</h4>
+                    <p class="stars">${starRating(rating)}</p>
+                    <p>£ ${price}</p>
+                </a>
+                <button id="${id}">Add to cart</button>
+            </div>
+        
+    `   
 }
 
 

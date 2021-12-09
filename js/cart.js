@@ -1,6 +1,7 @@
 import { findIndex, showProducts, starRating } from "./utils.js";
 
 const container = document.querySelector('.cartCont');
+const showPrice = document.querySelector('.totalPrice');
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!shoppingCart){
@@ -56,18 +57,21 @@ const cart = () => {
                     <h4>${item.description}</h4>
                     <p>${starRating(item.rating)}</p>
                 </div>
-                <div class="priceRating">
+                <div>
                     <p class="price">£ ${item.price}</p>
                     <button id="${item.id}">Remove from cart</button>
                 </div>
             </div>
         `
     }
+
+    showPrice.innerHTML = `Total price: £ ` + price();
     if (container.innerHTML === '') {
         container.innerHTML = `<h2> Cart is empty</h2>`
     }
     remove();
-}
+
+};
 
 
 
