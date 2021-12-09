@@ -28,8 +28,6 @@ const price = () => {
 }
 
 
-
-
 const remove = () => {
     for (const item of getCart) {
         document.getElementById(`${item.id}`).addEventListener('click', () => {

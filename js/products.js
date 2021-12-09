@@ -113,8 +113,8 @@ if(!shoppingCart){
 const addToCart = (array) => {
     array.forEach((item) => {
         document.getElementById(`${item.id}`).addEventListener('click', () => {
-        shoppingCart.push(data[findIndex(data,item)]);
-        window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+            shoppingCart.push(data[findIndex(data,item)]);
+            window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
     })
     })
 }
