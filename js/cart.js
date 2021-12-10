@@ -2,13 +2,16 @@ import { findIndex, showProducts, starRating } from "./utils.js";
 
 const container = document.querySelector('.cartCont');
 const showPrice = document.querySelector('.totalPrice');
+const cartcounter = document.querySelector('.cartcounter');
 
-const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
-if(!shoppingCart){
-    localStorage.setItem("cart", JSON.stringify([]))
-}
+
+// const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+
 
 const getCart = JSON.parse(window.localStorage.getItem('cart'));
+if(!getCart){
+    localStorage.setItem("cart", JSON.stringify([]))
+}
 
 const price = () => {
     const priceList = uniqueArray.map((item)=>{
@@ -25,15 +28,22 @@ const price = () => {
     return priceList.reduce(reducer)    
 }
 
+const uniqueArray = getCart.filter((item, index) => {
+    const _thing = JSON.stringify(item);
+    return index === getCart.findIndex(obj => {
+      return JSON.stringify (obj) === _thing;
+    });
+});
+
 
 const remove = () => {
     for (const item of uniqueArray) {
         document.getElementById(`${item.id}`).addEventListener('click', () => {
-            getCart.splice(findIndex(getCart, item), 1);
-            window.localStorage.setItem('cart', JSON.stringify(getCart));
-            render();
+            uniqueArray.splice(findIndex(uniqueArray, item), 1);
+            window.localStorage.setItem('cart', JSON.stringify(uniqueArray));
             price();
             console.log(price());
+            render();
         })
     } 
 }
@@ -56,28 +66,25 @@ const render = () => {
                 <div>
                     <p class="price">£ ${item.price * amount}</p>
                     <p>Quantity ${amount}</p>
-                    <button id="${item.id}">Remove from cart</button>
+                    <button id="${item.id}">Remove from all cart</button>
                 </div>
             </div>
         `
     }
 
     showPrice.innerHTML = `Total price: £ ` + price();
+    // cartcounter.innerHTML = `Total products in cart: ` + getCart.length;
 
     if (container.innerHTML === '') {
         container.innerHTML = `<h2> Cart is empty</h2>`
     }
     remove();
 
+    // cartcounter.innerHTML = getCart.length
 };
 
 
-const uniqueArray = getCart.filter((item, index) => {
-  const _thing = JSON.stringify(item);
-  return index === getCart.findIndex(obj => {
-    return JSON.stringify (obj) === _thing;
-  });
-});
+
 
 // console.log("ua: " +  uniqueArray)
 
