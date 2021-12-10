@@ -292,4 +292,35 @@ button:active {
   text-align: center;
 }
 
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C1E21;
+  margin: 50px;
+  color: white;
+}
+.loginContainer h1 {
+  margin-top: 10px;
+}
+.loginContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 30px;
+}
+.loginContainer form div {
+  padding: 10px;
+}
+.loginContainer form div input {
+  width: 100%;
+  padding: 3px;
+  outline: none;
+}
+.loginContainer form button {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=output.css.map */
