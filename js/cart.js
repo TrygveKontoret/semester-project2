@@ -11,8 +11,8 @@ if(!shoppingCart){
 const getCart = JSON.parse(window.localStorage.getItem('cart'));
 
 const price = () => {
-    const priceList = getCart.map((item)=>{
-        return item.price 
+    const priceList = uniqueArray.map((item)=>{
+        return item.price * getCart.filter(obj => obj.id === item.id).length
     })
 
     if (priceList.length === 0) {
@@ -22,29 +22,27 @@ const price = () => {
 
     const reducer = (x, y) => x + y;
 
-    return priceList.reduce(reducer)
-
-    
+    return priceList.reduce(reducer)    
 }
 
 
 const remove = () => {
-    for (const item of getCart) {
+    for (const item of uniqueArray) {
         document.getElementById(`${item.id}`).addEventListener('click', () => {
             getCart.splice(findIndex(getCart, item), 1);
             window.localStorage.setItem('cart', JSON.stringify(getCart));
-            cart();
+            render();
             price();
             console.log(price());
         })
     } 
-    
 }
 
-const cart = () => {
+const render = () => {
     container.innerHTML = '';
-    for (const item of getCart) {
-        // container.innerHTML += showProducts(item);
+    
+    for (const item of uniqueArray) {
+        const amount = getCart.filter(obj => obj.id === item.id).length;
         container.innerHTML += `
             <div class="card">
                 <div class="prodImg">
@@ -56,7 +54,8 @@ const cart = () => {
                     <p>${starRating(item.rating)}</p>
                 </div>
                 <div>
-                    <p class="price">£ ${item.price}</p>
+                    <p class="price">£ ${item.price * amount}</p>
+                    <p>Quantity ${amount}</p>
                     <button id="${item.id}">Remove from cart</button>
                 </div>
             </div>
@@ -64,6 +63,7 @@ const cart = () => {
     }
 
     showPrice.innerHTML = `Total price: £ ` + price();
+
     if (container.innerHTML === '') {
         container.innerHTML = `<h2> Cart is empty</h2>`
     }
@@ -72,7 +72,17 @@ const cart = () => {
 };
 
 
+const uniqueArray = getCart.filter((item, index) => {
+  const _thing = JSON.stringify(item);
+  return index === getCart.findIndex(obj => {
+    return JSON.stringify (obj) === _thing;
+  });
+});
 
-cart();
+// console.log("ua: " +  uniqueArray)
+
+
+
+render();
 price();
 console.log(price());

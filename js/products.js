@@ -100,7 +100,7 @@ const render = () => {
     window.sessionStorage.removeItem('fubar');
 
     addToCart(filterTitle);
-    addToCart(data)
+    addToCart(data);
 }
 
 getProducts();
