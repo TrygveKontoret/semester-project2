@@ -1,7 +1,7 @@
 import { url } from './api.js';
 import { fetchProducts, showProducts, findIndex, containItem } from './utils.js';
 
-console.log(await fetchProducts(url));
+console.log(await fetchProducts(url + "products"));
 
 const container = document.querySelector('.container');
 
@@ -11,7 +11,7 @@ const search = document.querySelector('.searchbtn');
 let data = []
 
 const getProducts = async () => {
-    const products = await fetchProducts(url);
+    const products = await fetchProducts(url + "products");
     for (const product of products) {
         data.push(product)
     };

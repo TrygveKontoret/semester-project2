@@ -8,7 +8,7 @@ const query = document.location.search;
 const parameter = new URLSearchParams(query);
 const id = parameter.get('id');
 
-console.log(await fetchProducts(url + '/' + `${id}`));
+console.log(await fetchProducts(url + 'products/' + `${id}`));
 
 const container = document.querySelector('.detail-wrapper');
 const meta = document.querySelector('.meta');
@@ -19,7 +19,7 @@ const body = document.querySelector('body');
 let data = []
 
 const getProducts = async () => {
-    const product = await fetchProducts(url + "/" + `${id}`);
+    const product = await fetchProducts(url + "products/" + `${id}`);
         data.push(product)
     render()
 

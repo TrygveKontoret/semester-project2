@@ -6,14 +6,14 @@ if(!shoppingCart){
     localStorage.setItem('cart', JSON.stringify([]))
 }
 
-console.log(await fetchProducts(url));
+console.log(await fetchProducts(url + "products"));
 
 const container = document.querySelector('.container');
 
 let data = []
 
 const getProducts = async () => {
-    const products = await fetchProducts(url);
+    const products = await fetchProducts(url + "products");
     for (const product of products) {
         data.push(product)
     };
