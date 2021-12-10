@@ -261,7 +261,7 @@ button:active {
   padding: 20px;
 }
 .cartCont .card .prodImg {
-  width: 25%;
+  width: 10%;
 }
 .cartCont .card .prodImg img {
   width: 100%;
@@ -271,7 +271,7 @@ button:active {
 }
 .cartCont .card h4 {
   padding: 10px 0 5px 0;
-  font-size: 18px;
+  font-size: 14px;
 }
 .cartCont .card .stars {
   padding-bottom: 10px;
