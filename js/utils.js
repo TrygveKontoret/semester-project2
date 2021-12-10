@@ -100,3 +100,18 @@ const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 //     },
 //   });
   
+
+const tokenKey = 'token';
+const userKey = 'user';
+
+export const saveToken = (token) => {
+    storage(tokenKey, token);
+};
+
+export const saveUser = (user) => {
+    storage(userKey, user);
+};
+
+const storage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+}
