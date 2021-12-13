@@ -2,7 +2,7 @@ import { findIndex, showProducts, starRating } from "./utils.js";
 
 const container = document.querySelector('.cartCont');
 const showPrice = document.querySelector('.totalPrice');
-const cartcounter = document.querySelector('.cartcounter');
+// const cartcounter = document.querySelector('.cartcounter');
 
 
 // const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
@@ -14,7 +14,7 @@ if(!getCart){
 }
 
 const price = () => {
-    const priceList = uniqueArray.map((item)=>{
+    const priceList = uniqueProductArray.map((item)=>{
         return item.price * getCart.filter(obj => obj.id === item.id).length
     })
 
@@ -28,19 +28,19 @@ const price = () => {
     return priceList.reduce(reducer)    
 }
 
-const uniqueArray = getCart.filter((item, index) => {
-    const _thing = JSON.stringify(item);
+const uniqueProductArray = getCart.filter((item, index) => {
+    const product = JSON.stringify(item);
     return index === getCart.findIndex(obj => {
-      return JSON.stringify (obj) === _thing;
+      return JSON.stringify (obj) === product;
     });
 });
 
 
 const remove = () => {
-    for (const item of uniqueArray) {
+    for (const item of uniqueProductArray) {
         document.getElementById(`${item.id}`).addEventListener('click', () => {
-            uniqueArray.splice(findIndex(uniqueArray, item), 1);
-            window.localStorage.setItem('cart', JSON.stringify(uniqueArray));
+            uniqueProductArray.splice(findIndex(uniqueProductArray, item), 1);
+            window.localStorage.setItem('cart', JSON.stringify(uniqueProductArray));
             price();
             console.log(price());
             render();
@@ -51,7 +51,7 @@ const remove = () => {
 const render = () => {
     container.innerHTML = '';
     
-    for (const item of uniqueArray) {
+    for (const item of uniqueProductArray) {
         const amount = getCart.filter(obj => obj.id === item.id).length;
         container.innerHTML += `
             <div class="card">
@@ -79,16 +79,7 @@ const render = () => {
         container.innerHTML = `<h2> Cart is empty</h2>`
     }
     remove();
-
-    // cartcounter.innerHTML = getCart.length
 };
-
-
-
-
-// console.log("ua: " +  uniqueArray)
-
-
 
 render();
 price();

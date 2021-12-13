@@ -73,8 +73,6 @@ modal.addEventListener("click", function() {
     body.classList.remove("modalBody");
 });
 
-
-
 getProducts();
 
 
@@ -89,5 +87,3 @@ search.addEventListener('click', () => {
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
 });
-
-

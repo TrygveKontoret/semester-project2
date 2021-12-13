@@ -42,26 +42,11 @@ search.addEventListener('click', () => {
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
-
-        
-
-        // window.sessionStorage.removeItem('fubar');
-            
-        
     })
-    // if (filterTitle === []) {
-    //     container.innerHTML = "aslkdsadjaksd"
-    // }
-
     console.log(filterTitle)
 
     addToCart(filterTitle);    
 })
-
-// if (container.innerHTML === "") {
-//     container.innerHTML === `<p>FUNK DA FOR FAEN</p>`
-// }
-
 
 const render = () => {
     
@@ -75,11 +60,8 @@ const render = () => {
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
         })
-        
 
-        // if(container.innerHTML = ""){
-        //     container.innerHTML = "jfoijjÆOKdj"
-        // }
+        addToCart(filterTitle);
         
     }
 
@@ -87,20 +69,11 @@ const render = () => {
         for (const product of data) {
             container.innerHTML += showProducts(product);
         }
-        // if(filterTitle === []){
-        //     container.innerHTML = "bitch du er en bitch"
-        // }
+        addToCart(data);
 
     }
-    // console.log(filterTitle)
-    // if(filterTitle === []){
-    //     container.innerHTML = "Dude bare funger din fitte"
-    // }
     
     window.sessionStorage.removeItem('fubar');
-
-    addToCart(filterTitle);
-    addToCart(data);
 }
 
 getProducts();
