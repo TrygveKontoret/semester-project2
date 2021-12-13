@@ -65,3 +65,15 @@ const login = async (username, password) => {
         showMessage("errorrr", error, ".errorMessage");
     }
 };
+
+
+const input = document.querySelector('input');
+const search = document.querySelector('.searchbtn');
+
+let filterValue;
+
+search.addEventListener('click', () => {
+    filterValue = input.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+});

@@ -81,6 +81,17 @@ const render = () => {
     remove();
 };
 
+const input = document.querySelector('input');
+const search = document.querySelector('.searchbtn');
+
+let filterValue;
+
+search.addEventListener('click', () => {
+    filterValue = input.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+});
+
 render();
 price();
 console.log(price());

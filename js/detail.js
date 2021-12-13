@@ -1,8 +1,5 @@
 import { url } from './api.js';
-import { fetchProducts, starRating } from './utils.js';
-
-
-
+import { fetchProducts, findIndex, starRating } from './utils.js';
 
 const query = document.location.search;
 const parameter = new URLSearchParams(query);
@@ -44,7 +41,7 @@ const render = () => {
                         <h4>${product.description}</h4>
                         <p class="price">£ ${product.price}</p>
                         <p>${starRating(product.rating)}</p>
-                        <button>Add to cart</button>
+                        <button id="${product.id}">Add to cart</button>
                     </div>
                 </div>
             </div>
@@ -53,6 +50,7 @@ const render = () => {
         modal.innerHTML = `<img src ="${product.img_url}"/>`
     }
     funkyModal();
+    addToCart();
 }
 
 
@@ -66,8 +64,6 @@ const funkyModal = ()=> {
     })}
 };
 
-
-
 modal.addEventListener("click", function() {
     modal.style.display = "none";
     body.classList.remove("modalBody");
@@ -75,12 +71,34 @@ modal.addEventListener("click", function() {
 
 getProducts();
 
+const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
+if(!shoppingCart){
+    localStorage.setItem("cart", JSON.stringify([]))
+}
+
+// const addToCart = (array) => {
+//     array.forEach((item) => {
+//         document.getElementById(`${item.id}`).addEventListener('click', () => {
+//             shoppingCart.push(data[findIndex(data,item)]);
+//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+//     })
+//     })
+// }
+
+const addToCart = () => {
+    for (const product of data) {
+        document.getElementById(`${product.id}`).addEventListener('click', () => {
+            shoppingCart.push(data[findIndex(data, item)]);
+            window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+        })
+    }
+};
+
 
 const input = document.querySelector('input');
 const search = document.querySelector('.searchbtn');
 
 let filterValue;
-let filterTitle;
 
 search.addEventListener('click', () => {
     filterValue = input.value.trim();
