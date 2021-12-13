@@ -18,6 +18,10 @@ body {
     background-color: variables.$colorBackground;
 }
 
+.burgerNav {
+    display: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
