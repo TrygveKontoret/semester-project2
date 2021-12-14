@@ -2,6 +2,7 @@
 
 .burger {
     display: none;
+    margin-right: 50px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -42,14 +43,14 @@
     
         }
 
-        input {
+        .burgerInput {
             border: none;
             width: 60%;
             outline: none;
             padding-left: 15px;
         }
 
-        .searchbtn {
+        .searchbtnBurger {
             background-color: variables.$ColorMain;
             padding: 5px 15px;
 
@@ -58,7 +59,7 @@
             }
         }
 
-        .searchbtn:hover {
+        .searchbtnBurger:hover {
             cursor: pointer;
         }
     }

@@ -80,6 +80,15 @@ search.addEventListener('click', () => {
     document.location.href = './products.html';
 });
 
+const searchBurger = document.querySelector('.searchbtnBurger');
+const burgerInput = document.querySelector('.burgerInput');
+
+searchBurger.addEventListener('click', () => { 
+    filterValue = burgerInput.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+})
+
 const funkyModal = ()=> {
     for (const product of data) {
         document.getElementById(`${product.id+1}`).addEventListener('click', () => {

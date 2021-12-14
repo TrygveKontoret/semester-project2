@@ -48,6 +48,25 @@ search.addEventListener('click', () => {
     addToCart(filterTitle);    
 })
 
+const searchBurger = document.querySelector('.searchbtnBurger');
+const burgerInput = document.querySelector('.burgerInput');
+
+searchBurger.addEventListener('click', () => { 
+    filterValue = burgerInput.value.trim();
+    container.innerHTML = '';
+
+    filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
+    filterTitle.forEach((product) => {
+        container.innerHTML += showProducts(product);
+    })
+    burgerNav.style.display = 'none';
+    burger.classList.toggle("change");
+    console.log(filterTitle)
+
+    addToCart(filterTitle); 
+})
+
+
 const render = () => {
     
     filterValue = input.value.trim();
