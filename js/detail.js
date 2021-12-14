@@ -19,8 +19,8 @@ const getProducts = async () => {
     const product = await fetchProducts(url + "products/" + `${id}`);
         data.push(product)
     render()
-
 };
+
 
 
 const render = () => {
@@ -34,7 +34,7 @@ const render = () => {
             <div class="singleProd">
                 <div class="left">
                     <h1>${product.title}</h1>
-                    <img id="${product.id}" src ="${product.img_url}"/>
+                    <img id="${product.id+1}" src ="${product.img_url}"/>
                 </div>
                 <div class="right"> 
                     <div>
@@ -53,43 +53,17 @@ const render = () => {
     addToCart();
 }
 
-
-const funkyModal = ()=> {
-    for (const imgmodal of data) {
-        document.getElementById(`${imgmodal.id}`).addEventListener('click', () => {
-            const funky = document.querySelector(".bigger");
-            modal.style.display = "flex";
-            body.classList.add("modalBody");
-            document.documentElement.scrollTop = "0";
-    })}
-};
-
-modal.addEventListener("click", function() {
-    modal.style.display = "none";
-    body.classList.remove("modalBody");
-});
-
-getProducts();
-
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!shoppingCart){
     localStorage.setItem("cart", JSON.stringify([]))
 }
 
-// const addToCart = (array) => {
-//     array.forEach((item) => {
-//         document.getElementById(`${item.id}`).addEventListener('click', () => {
-//             shoppingCart.push(data[findIndex(data,item)]);
-//             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
-//     })
-//     })
-// }
-
 const addToCart = () => {
     for (const product of data) {
         document.getElementById(`${product.id}`).addEventListener('click', () => {
-            shoppingCart.push(data[findIndex(data, item)]);
+            shoppingCart.push(data[findIndex(data, product)]);
             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
+            console.log("HELLLOOOO");
         })
     }
 };
@@ -105,3 +79,20 @@ search.addEventListener('click', () => {
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
 });
+
+const funkyModal = ()=> {
+    for (const product of data) {
+        document.getElementById(`${product.id+1}`).addEventListener('click', () => {
+            const funky = document.querySelector(".bigger");
+            modal.style.display = "flex";
+            body.classList.add("modalBody");
+            document.documentElement.scrollTop = "0";
+    })}
+};
+
+modal.addEventListener("click", function() {
+    modal.style.display = "none";
+    body.classList.remove("modalBody");
+});
+
+getProducts();
