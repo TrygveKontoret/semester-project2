@@ -57,6 +57,7 @@
     <div class="adminCont">
         <div class="addForm">
             <h2>Add product</h2>
+            <div class="errorMessage"></div>
             <div>
                 <span>Title</span>
                 <input type="text" name="Title" id="addTitle">
@@ -67,7 +68,13 @@
             </div>
             <div>
                 <span>Rating</span>
-                <input type="range" name="Rating" id="addRating">
+                <input type="range" name="Rating" id="addRating"
+                    type="range"
+                    value="3"
+                    min="0"
+                    max="5"
+                    oninput="this.nextElementSibling.value = this.value"/>
+                <output>0</output>
             </div>
             <div>
                 <span>Image</span>
@@ -75,7 +82,7 @@
             </div>
             <div>
                 <span>Featured</span>
-                <input type="checkbox" name="Featured" id="addFeatured">
+                <input type="checkbox" name="Featured" id="addFeatured" checked="false">
             </div>
             <div>
                 <span>Description</span>
@@ -95,7 +102,13 @@
             </div>
             <div>
                 <span>Rating</span>
-                <input type="range" name="Rating" id="editRating">
+                <input type="range" name="Rating" id="editRating"
+                    type="range"
+                    value="3"
+                    min="0"
+                    max="5"
+                    oninput="this.nextElementSibling.value = this.value"/>
+                <output>0</output>
             </div>
             <div>
                 <span>Image</span>

@@ -66,7 +66,7 @@ const render = () => {
                 <div>
                     <p class="price">£ ${item.price * amount}</p>
                     <p>Quantity ${amount}</p>
-                    <button id="${item.id}">Remove from all cart</button>
+                    <button id="${item.id}">Remove from cart</button>
                 </div>
             </div>
         `
