@@ -29,6 +29,7 @@ const render = () => {
         }
     }
     addToCart(data);
+    
 }
 
 getProducts();
