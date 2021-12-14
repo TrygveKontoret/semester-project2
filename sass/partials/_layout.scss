@@ -128,7 +128,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: variables.$colorFeatured;
 
     .content {
@@ -146,6 +146,9 @@ header {
             flex-wrap: wrap;
 
             .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 width: 250px;
                 color: white;
                 margin-bottom: 50px;
@@ -158,6 +161,8 @@ header {
                 h4 {
                     padding: 10px 0 5px 0;
                     font-size: 18px;
+                    height: 50px;
+                    margin-bottom: 20px;
                 }
 
                 .stars {
