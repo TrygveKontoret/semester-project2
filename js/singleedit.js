@@ -14,6 +14,7 @@ const editImage = document.querySelector('#editImage');
 const editFeatured = document.querySelector('#editFeatured');
 const editDesc = document.querySelector('#editDesc');
 const editButton = document.querySelector('#editButton');
+const delButton = document.querySelector('#delButton');
 
 const getInputs = async () => {
     const response = await fetch(url + 'products/' + `${id}`);
@@ -71,4 +72,30 @@ const editProduct = async (title, price, rating, image, featured, desc) => {
 
     const response = await fetch(editUrl, options);
     const json = await response.json();
-}
+};
+
+delButton.addEventListener('click', () => {
+    deleteProduct();
+    document.location.href = './editproducts.html';
+
+})
+
+const deleteProduct = async (title, price, rating, image, featured, desc) => {
+    const deleteUrl = url + 'products/' + id;
+
+    const data = JSON.stringify({title: title, price: price, rating: rating, img_url: image, featured: featured, description: desc})
+
+    console.log(token)
+
+    const options = {
+        method: "DELETE",
+        body: data,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    const response = await fetch(deleteUrl, options);
+    const json = await response.json();
+};
