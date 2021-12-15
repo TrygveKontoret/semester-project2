@@ -1,6 +1,6 @@
 @use './variables';
 
-.cartCont {
+.cartCont, .editContainer {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -19,6 +19,7 @@
         color: white;
         justify-content: space-evenly;
         padding: 20px;
+        border-top: white 1px solid;
         
         .prodImg {
             width: 10%;

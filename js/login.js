@@ -1,5 +1,5 @@
 import { url } from './api.js';
-import { saveToken, saveUser } from './utils.js';
+import { saveToken, saveUser, showMessage } from './utils.js';
 
 
 const username = document.querySelector('#username');
@@ -7,12 +7,12 @@ const password = document.querySelector('#password');
 const form = document.querySelector('form');
 const errorMessage = document.querySelector('.errorMessage');
 
-const showMessage = (message, messageType, target) => {
-    const item = document.querySelector(target);
-    item.innerHTML = `
-    <div class_"${messageType}">${message}</div>
-    `;
-}
+// const showMessage = (message, messageType, target) => {
+//     const item = document.querySelector(target);
+//     item.innerHTML = `
+//     <div class_"${messageType}">${message}</div>
+//     `;
+// }
 
 const submitForm = (e) => {
     e.preventDefault();

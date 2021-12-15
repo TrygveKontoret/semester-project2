@@ -115,3 +115,12 @@ export const saveUser = (user) => {
 const storage = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
 }
+
+export const showMessage = (message, messageType, target) => {
+    const item = document.querySelector(target);
+    item.innerHTML = `
+    <div class="${messageType}">${message}</div>
+    `;
+}
+
+export const token = JSON.parse(localStorage.getItem('token'));

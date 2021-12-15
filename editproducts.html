@@ -54,82 +54,12 @@
         </div>
     </div>
 
-    <div class="adminCont">
-        <a href="./editproducts.html">
-            <button>Edit products</button>
-        </a>
-        <div class="addForm">
-            <h2>Add product</h2>
-            <div class="errorMessage"></div>
-            <div>
-                <span>Title</span>
-                <input type="text" name="Title" id="addTitle">
-            </div>
-            <div>
-                <span>Price</span>
-                <input type="text" name="Price" id="addPrice">
-            </div>
-            <div>
-                <span>Rating</span>
-                <input type="range" name="Rating" id="addRating"
-                    type="range"
-                    value="3"
-                    min="0"
-                    max="5"
-                    oninput="this.nextElementSibling.value = this.value"/>
-                <output>3</output>
-            </div>
-            <div>
-                <span>Image</span>
-                <input type="text" name="Image" id="addImage">
-            </div>
-            <div>
-                <span>Featured</span>
-                <input type="checkbox" name="Featured" id="addFeatured" checked="false">
-            </div>
-            <div>
-                <span>Description</span>
-                <textarea name="Description" id="addDesc" cols="30" rows="10"></textarea>
-            </div>
-            <button id="addButton">Add product</button>
-        </div>
-        <div class="editForm">
-            <h2>Edit product</h2>
-            <div>
-                <span>Title</span>
-                <input type="text" name="Title" id="editTitle">
-            </div>
-            <div>
-                <span>Price</span>
-                <input type="text" name="Price" id="editPrice">
-            </div>
-            <div>
-                <span>Rating</span>
-                <input type="range" name="Rating" id="editRating"
-                    type="range"
-                    value="3"
-                    min="0"
-                    max="5"
-                    oninput="this.nextElementSibling.value = this.value"/>
-                <output>0</output>
-            </div>
-            <div>
-                <span>Image</span>
-                <input type="text" name="Image" id="editImage">
-            </div>
-            <div>
-                <span>Featured</span>
-                <input type="checkbox" name="Featured" id="editFeatured">
-            </div>
-            <div>
-                <span>Description</span>
-                <textarea name="Description" id="editDesc" cols="30" rows="10"></textarea>
-            </div>
-            <button id="editButton">Edit product</button>
-        </div>
-    </div>
-    <script type="module" src="./js/admin.js"></script>
+    <div class="editContainer"></div>
+
+
+    <!-- <script type="module" src="./js/admin.js"></script> -->
     <script src="./js/burger.js"></script>
+    <script type="module" src="./js/editproducts.js"></script>
     
 </body>
 </html>

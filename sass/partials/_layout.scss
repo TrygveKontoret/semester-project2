@@ -220,6 +220,18 @@ button:active {
     transform: scale(0.9);
 }
 
+.editContainer {
+    display: flex;
+
+    .card {
+        width: 500px;
+
+        img {
+            width: 200px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     
     header {
@@ -230,4 +242,6 @@ button:active {
     }
 
 }
+
+
     

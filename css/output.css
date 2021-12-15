@@ -184,6 +184,16 @@ button:active {
   transform: scale(0.9);
 }
 
+.editContainer {
+  display: flex;
+}
+.editContainer .card {
+  width: 500px;
+}
+.editContainer .card img {
+  width: 200px;
+}
+
 @media (max-width: 768px) {
   header .searchNav {
     display: none;
@@ -255,7 +265,7 @@ button:active {
   cursor: pointer;
 }
 
-.cartCont {
+.cartCont, .editContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -263,34 +273,35 @@ button:active {
   background-color: #1C1E21;
   color: white;
 }
-.cartCont h2 {
+.cartCont h2, .editContainer h2 {
   text-align: center;
   padding: 50px;
 }
-.cartCont .card {
+.cartCont .card, .editContainer .card {
   display: flex;
   width: 100%;
   color: white;
   justify-content: space-evenly;
   padding: 20px;
+  border-top: white 1px solid;
 }
-.cartCont .card .prodImg {
+.cartCont .card .prodImg, .editContainer .card .prodImg {
   width: 10%;
 }
-.cartCont .card .prodImg img {
+.cartCont .card .prodImg img, .editContainer .card .prodImg img {
   width: 100%;
 }
-.cartCont .card .titleDesc {
+.cartCont .card .titleDesc, .editContainer .card .titleDesc {
   width: 50%;
 }
-.cartCont .card h4 {
+.cartCont .card h4, .editContainer .card h4 {
   padding: 10px 0 5px 0;
   font-size: 14px;
 }
-.cartCont .card .stars {
+.cartCont .card .stars, .editContainer .card .stars {
   padding-bottom: 10px;
 }
-.cartCont .card p {
+.cartCont .card p, .editContainer .card p {
   font-size: 25px;
   padding-bottom: 20px;
 }

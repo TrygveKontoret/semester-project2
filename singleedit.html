@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPU | Admin</title>
     <link rel="stylesheet" href="./css/output.css">
 </head>
@@ -55,45 +64,8 @@
     </div>
 
     <div class="adminCont">
-        <a href="./editproducts.html">
-            <button>Edit products</button>
-        </a>
-        <div class="addForm">
-            <h2>Add product</h2>
-            <div class="errorMessage"></div>
-            <div>
-                <span>Title</span>
-                <input type="text" name="Title" id="addTitle">
-            </div>
-            <div>
-                <span>Price</span>
-                <input type="text" name="Price" id="addPrice">
-            </div>
-            <div>
-                <span>Rating</span>
-                <input type="range" name="Rating" id="addRating"
-                    type="range"
-                    value="3"
-                    min="0"
-                    max="5"
-                    oninput="this.nextElementSibling.value = this.value"/>
-                <output>3</output>
-            </div>
-            <div>
-                <span>Image</span>
-                <input type="text" name="Image" id="addImage">
-            </div>
-            <div>
-                <span>Featured</span>
-                <input type="checkbox" name="Featured" id="addFeatured" checked="false">
-            </div>
-            <div>
-                <span>Description</span>
-                <textarea name="Description" id="addDesc" cols="30" rows="10"></textarea>
-            </div>
-            <button id="addButton">Add product</button>
-        </div>
         <div class="editForm">
+            <div class="errorMessage"></div>
             <h2>Edit product</h2>
             <div>
                 <span>Title</span>
@@ -111,7 +83,7 @@
                     min="0"
                     max="5"
                     oninput="this.nextElementSibling.value = this.value"/>
-                <output>0</output>
+                <output></output>
             </div>
             <div>
                 <span>Image</span>
@@ -128,8 +100,10 @@
             <button id="editButton">Edit product</button>
         </div>
     </div>
-    <script type="module" src="./js/admin.js"></script>
     <script src="./js/burger.js"></script>
+    <script type="module" src="./js/singleedit.js"></script>
+</body>
+</html>
     
 </body>
 </html>
