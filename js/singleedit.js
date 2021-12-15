@@ -76,16 +76,12 @@ const editProduct = async (title, price, rating, image, featured, desc) => {
 
 delButton.addEventListener('click', () => {
     deleteProduct();
-    document.location.href = './editproducts.html';
-
 })
 
 const deleteProduct = async (title, price, rating, image, featured, desc) => {
     const deleteUrl = url + 'products/' + id;
 
     const data = JSON.stringify({title: title, price: price, rating: rating, img_url: image, featured: featured, description: desc})
-
-    console.log(token)
 
     const options = {
         method: "DELETE",
@@ -98,4 +94,6 @@ const deleteProduct = async (title, price, rating, image, featured, desc) => {
 
     const response = await fetch(deleteUrl, options);
     const json = await response.json();
+    console.log(json);
+    document.location.href = './editproducts.html';
 };
