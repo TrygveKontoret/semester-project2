@@ -5,9 +5,6 @@ console.log(await fetchProducts(url + "products"));
 
 const container = document.querySelector('.editContainer');
 
-const input = document.querySelector('input');
-const search = document.querySelector('.searchbtn');
-
 let data = []
 
 const getProducts = async () => {
