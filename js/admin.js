@@ -80,3 +80,25 @@ logOutbtn.addEventListener('click', () => {
     localStorage.removeItem('user');
     document.location.href = './index.html'
 })
+
+const input = document.querySelector('input');
+const search = document.querySelector('.searchbtn');
+
+let filterValue;
+
+
+search.addEventListener('click', () => { 
+    filterValue = input.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+})
+
+
+const searchBurger = document.querySelector('.searchbtnBurger');
+const burgerInput = document.querySelector('.burgerInput');
+
+searchBurger.addEventListener('click', () => { 
+    filterValue = burgerInput.value.trim();
+    window.sessionStorage.setItem('fubar', filterValue);
+    document.location.href = './products.html';
+})
