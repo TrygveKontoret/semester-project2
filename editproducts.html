@@ -26,7 +26,8 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./products.html">Products</a></li>
-                    <li><a href="./login.html">Log in</a></li>
+                    <li class="loggedOut"><a href="./login.html">Log in</a></li>
+                    <li class="loggedIn"><a href="./admin.html">Admin</a></li>
                     <li><a href="./cart.html">Cart</a></li>
                 </ul>
             </nav>
@@ -42,7 +43,8 @@
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./products.html">Products</a></li>
-                <li><a href="./login.html">Log in</a></li>
+                <li class="loggedOutBurger"><a href="./login.html">Log in</a></li>
+                <li id="active" class="loggedInBurger"><a href="./admin.html">Admin</a></li>
                 <li><a href="./cart.html">Cart</a></li>
             </ul>
         </nav>
@@ -58,7 +60,7 @@
 
 
     <!-- <script type="module" src="./js/admin.js"></script> -->
-    <script src="./js/burger.js"></script>
+    <script src="./js/universal.js"></script>
     <script type="module" src="./js/editproducts.js"></script>
     
 </body>

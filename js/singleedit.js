@@ -14,6 +14,7 @@ const editImage = document.querySelector('#editImage');
 const editFeatured = document.querySelector('#editFeatured');
 const editDesc = document.querySelector('#editDesc');
 const editButton = document.querySelector('#editButton');
+const ratingOutput = document.querySelector('.ratingOutput');
 const delButton = document.querySelector('#delButton');
 
 const getInputs = async () => {
@@ -26,6 +27,7 @@ const getInputs = async () => {
     editRating.value = json.rating;
     editImage.value = json.img_url;
     editFeatured.checked = json.featured;
+    ratingOutput.value = json.rating;
 
     document.title = `GPU | Edit: ${json.title}`
 
@@ -75,7 +77,11 @@ const editProduct = async (title, price, rating, image, featured, desc) => {
 };
 
 delButton.addEventListener('click', () => {
-    deleteProduct();
+    const sureDelete = window.confirm("Are you sure you want to delete this product?");
+
+    if (sureDelete) {
+        deleteProduct();
+    }
 })
 
 const deleteProduct = async (title, price, rating, image, featured, desc) => {

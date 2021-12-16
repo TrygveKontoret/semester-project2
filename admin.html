@@ -26,7 +26,8 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./products.html">Products</a></li>
-                    <li><a href="./login.html">Log in</a></li>
+                    <li class="loggedOut"><a href="./login.html">Log in</a></li>
+                    <li id="active" class="loggedIn"><a href="./admin.html">Admin</a></li>
                     <li><a href="./cart.html">Cart</a></li>
                 </ul>
             </nav>
@@ -42,7 +43,8 @@
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./products.html">Products</a></li>
-                <li><a href="./login.html">Log in</a></li>
+                <li class="loggedOutBurger"><a href="./login.html">Log in</a></li>
+                <li id="active" class="loggedInBurger"><a href="./admin.html">Admin</a></li>
                 <li><a href="./cart.html">Cart</a></li>
             </ul>
         </nav>
@@ -93,43 +95,9 @@
             </div>
             <button id="addButton">Add product</button>
         </div>
-        <div class="editForm">
-            <h2>Edit product</h2>
-            <div>
-                <span>Title</span>
-                <input type="text" name="Title" id="editTitle">
-            </div>
-            <div>
-                <span>Price</span>
-                <input type="text" name="Price" id="editPrice">
-            </div>
-            <div>
-                <span>Rating</span>
-                <input type="range" name="Rating" id="editRating"
-                    type="range"
-                    value="3"
-                    min="0"
-                    max="5"
-                    oninput="this.nextElementSibling.value = this.value"/>
-                <output>0</output>
-            </div>
-            <div>
-                <span>Image</span>
-                <input type="text" name="Image" id="editImage">
-            </div>
-            <div>
-                <span>Featured</span>
-                <input type="checkbox" name="Featured" id="editFeatured">
-            </div>
-            <div>
-                <span>Description</span>
-                <textarea name="Description" id="editDesc" cols="30" rows="10"></textarea>
-            </div>
-            <button id="editButton">Edit product</button>
-        </div>
     </div>
     <script type="module" src="./js/admin.js"></script>
-    <script src="./js/burger.js"></script>
+    <script src="./js/universal.js"></script>
     
 </body>
 </html>
