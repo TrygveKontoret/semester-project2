@@ -16,6 +16,11 @@ body {
   background-color: #222529;
 }
 
+h1 {
+  color: white;
+  text-align: center;
+}
+
 .burgerNav {
   display: none;
 }
@@ -216,7 +221,7 @@ button:active {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 50px 50px 0 50px;
+  margin: 10px 50px 0 50px;
   color: white;
 }
 .adminNav button {

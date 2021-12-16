@@ -28,6 +28,7 @@ const addButton = document.querySelector('#addButton');
 
 addButton.addEventListener('click', () => {
     submit();
+    
 })
 
 
@@ -43,9 +44,13 @@ const submit = () => {
 
     if (title.length === 0 || price.length === 0 || isNaN(price) || image.length === 0 || desc.length === 0) {
         return showMessage("Please input proper values", "invalid", ".errorMessage")
-    };
+    }
+    else {
+        showMessage("Product successfully added", "invalid", ".errorMessage")
+        addProduct(title, price, rating, image, featured, desc);
+    }
 
-    addProduct(title, price, rating, image, featured, desc);
+    
 };
 
 const addProduct = async (title, price, rating, image, featured, desc) => {

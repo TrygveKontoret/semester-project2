@@ -18,6 +18,12 @@ body {
     background-color: variables.$colorBackground;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+    // padding-top: 20px;
+}
+
 .burgerNav {
     display: none;
 }
@@ -261,7 +267,7 @@ button:active {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 50px 50px 0 50px;
+    margin: 10px 50px 0 50px;
     color: white;
 
     button {
