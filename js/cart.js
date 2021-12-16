@@ -55,14 +55,18 @@ const render = () => {
         const amount = getCart.filter(obj => obj.id === item.id).length;
         container.innerHTML += `
             <div class="card">
-                <div class="prodImg">
-                    <img src ="${item.img_url}"/>
-                </div>
-                <div class="titleDesc"> 
-                    <h3>${item.title}</h3>
-                    <h4>${item.description}</h4>
-                    <p>${starRating(item.rating)}</p>
-                </div>
+                
+                    <div class="prodImg">
+                        <img src ="${item.img_url}"/>
+                    </div>
+                    <a href="detail.html?id=${item.id}">
+                        <div class="titleDesc"> 
+                            <h3>${item.title}</h3>
+                            <h4>${item.description}</h4>
+                            <p>${starRating(item.rating)}</p>
+                        </div>
+                    </a>
+                
                 <div>
                     <p class="price">£ ${item.price * amount}</p>
                     <p>Quantity ${amount}</p>

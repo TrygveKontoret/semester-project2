@@ -67,3 +67,11 @@ const addProduct = async (title, price, rating, image, featured, desc) => {
     const response = await fetch(addUrl, options);
     const json = await response.json();
 }
+
+const logOutbtn = document.querySelector('.logOut');
+
+logOutbtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    document.location.href = './index.html'
+})

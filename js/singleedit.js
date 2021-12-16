@@ -103,3 +103,11 @@ const deleteProduct = async (title, price, rating, image, featured, desc) => {
     console.log(json);
     document.location.href = './editproducts.html';
 };
+
+const logOutbtn = document.querySelector('.logOut');
+
+logOutbtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    document.location.href = './index.html'
+})

@@ -184,14 +184,43 @@ button:active {
   transform: scale(0.9);
 }
 
-.editContainer {
+.adminCont {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
-.editContainer .card {
-  width: 500px;
+.adminCont h1 {
+  margin-bottom: 20px;
 }
-.editContainer .card img {
-  width: 200px;
+.adminCont .addForm, .adminCont .editForm {
+  background-color: #1C1E21;
+  padding: 50px;
+}
+.adminCont .addForm div, .adminCont .editForm div {
+  display: flex;
+  flex-direction: column;
+}
+.adminCont .addForm button, .adminCont .editForm button {
+  margin-top: 20px;
+}
+.adminCont .addForm #delButton, .adminCont .editForm #delButton {
+  border: 4px solid red;
+}
+.adminCont .addForm #delButton:hover, .adminCont .editForm #delButton:hover {
+  transition: 0.5s;
+  background-color: red;
+}
+
+.adminNav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px 50px 0 50px;
+  color: white;
+}
+.adminNav button {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -290,6 +319,9 @@ button:active {
 }
 .cartCont .card .prodImg img, .editContainer .card .prodImg img {
   width: 100%;
+}
+.cartCont .card a, .editContainer .card a {
+  width: 50%;
 }
 .cartCont .card .titleDesc, .editContainer .card .titleDesc {
   width: 50%;

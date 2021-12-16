@@ -44,5 +44,13 @@ const render = () => {
     }
 };
 
+const logOutbtn = document.querySelector('.logOut');
+
+logOutbtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    document.location.href = './index.html'
+})
+
 
 getProducts();
