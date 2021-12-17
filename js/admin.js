@@ -28,6 +28,8 @@ const addButton = document.querySelector('#addButton');
 
 addButton.addEventListener('click', () => {
     submit();
+    showMessage("Product successfully added", "invalid", ".errorMessage")
+    addProduct(title, price, rating, image, featured, desc);
     
 })
 
@@ -46,6 +48,7 @@ const submit = () => {
         return showMessage("Please input proper values", "invalid", ".errorMessage")
     }
     else {
+        // location.reload();
         showMessage("Product successfully added", "invalid", ".errorMessage")
         addProduct(title, price, rating, image, featured, desc);
     }
