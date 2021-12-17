@@ -37,7 +37,6 @@ getInputs();
 
 editButton.addEventListener('click', () => {
     submit();
-    document.location.href = './editproducts.html';
 })
 
 const submit = () => {
@@ -54,6 +53,7 @@ const submit = () => {
     };
 
     editProduct(title, price, rating, image, featured, desc);
+    document.location.href = './editproducts.html';
 };
 
 const editProduct = async (title, price, rating, image, featured, desc) => {
