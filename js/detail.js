@@ -34,7 +34,7 @@ const render = () => {
             <div class="singleProd">
                 <div class="left">
                     <h1>${product.title}</h1>
-                    <img id="${product.id+1}" src ="${product.img_url}" alt="${item.title}"/>
+                    <img id="${product.id+1}" src ="${product.img_url}" alt="${product.title}"/>
                 </div>
                 <div class="right"> 
                     <div>
