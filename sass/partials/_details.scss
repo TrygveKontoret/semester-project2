@@ -69,7 +69,7 @@
     z-index: 999;
 
     img {
-        width: 50%;
+        width: 70%;
     }
 }
   
@@ -77,4 +77,40 @@
     overflow: hidden;
     height: 100vh;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    
+    .singleProd {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        .left {
+            width: 100%;
+            margin-bottom: 20px;
+            
+            h1, img {
+                width: 100%;
+            }
+        }
+
+        .right {
+            width: 100%;
+
+            button {
+                width: 100%;
+            }
+
+            div {
+                width: 100%;
+            }
+        }
+    }
+
+    .modal {
+        img {
+            width: 90%;
+        }
+    }
 }

@@ -35,7 +35,7 @@ const getInputs = async () => {
 
 getInputs();
 
-editButton.addEventListener('click', () => {
+editButton.addEventListener('click', (title, price, rating, image, featured, desc) => {
     submit();
 })
 
@@ -53,7 +53,6 @@ const submit = () => {
     };
 
     editProduct(title, price, rating, image, featured, desc);
-    document.location.href = './editproducts.html';
 };
 
 const editProduct = async (title, price, rating, image, featured, desc) => {
@@ -74,6 +73,7 @@ const editProduct = async (title, price, rating, image, featured, desc) => {
 
     const response = await fetch(editUrl, options);
     const json = await response.json();
+    document.location.href = './editproducts.html';
 };
 
 delButton.addEventListener('click', () => {
