@@ -7,13 +7,6 @@ const password = document.querySelector('#password');
 const form = document.querySelector('form');
 const errorMessage = document.querySelector('.errorMessage');
 
-// const showMessage = (message, messageType, target) => {
-//     const item = document.querySelector(target);
-//     item.innerHTML = `
-//     <div class_"${messageType}">${message}</div>
-//     `;
-// }
-
 const submitForm = (e) => {
     e.preventDefault();
 
@@ -27,8 +20,7 @@ const submitForm = (e) => {
     }
 
     login(usernameValue, passwordValue);
-}
-
+};
 
 form.addEventListener('submit', submitForm);
 
@@ -66,7 +58,6 @@ const login = async (username, password) => {
     }
 };
 
-
 const input = document.querySelector('input');
 const search = document.querySelector('.searchbtn');
 
@@ -85,4 +76,4 @@ searchBurger.addEventListener('click', () => {
     filterValue = burgerInput.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});

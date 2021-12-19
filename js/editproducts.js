@@ -15,8 +15,6 @@ const getProducts = async () => {
     render()
 };
 
-
-
 const render = () => {
     container.innerHTML = '';
     
@@ -25,7 +23,7 @@ const render = () => {
         <a href="singleedit.html?id=${item.id}">
             <div class="card">
                 <div class="prodImg">
-                    <img src ="${item.img_url}"/>
+                    <img src ="${item.img_url}" alt="${item.title}"/>
                 </div>
                 <div class="titleDesc"> 
                     <h3>${item.title}</h3>
@@ -47,8 +45,7 @@ logOutbtn.addEventListener('click', () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     document.location.href = './index.html'
-})
-
+});
 
 getProducts();
 
@@ -57,13 +54,11 @@ const search = document.querySelector('.searchbtn');
 
 let filterValue;
 
-
 search.addEventListener('click', () => { 
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
-
+});
 
 const searchBurger = document.querySelector('.searchbtnBurger');
 const burgerInput = document.querySelector('.burgerInput');
@@ -72,4 +67,4 @@ searchBurger.addEventListener('click', () => {
     filterValue = burgerInput.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});

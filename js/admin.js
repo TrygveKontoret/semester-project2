@@ -9,11 +9,9 @@ const addFeatured = document.querySelector('#addFeatured');
 const addDesc = document.querySelector('#addDesc');
 const addButton = document.querySelector('#addButton');
 
-addButton.addEventListener('click', (title, price, rating, image, featured, desc) => {
+addButton.addEventListener('click', () => {
     submit();
-    showMessage("Product successfully added", "invalid", ".errorMessage")
-    addProduct(title, price, rating, image, featured, desc);
-})
+});
 
 const submit = () => {
 
@@ -29,8 +27,6 @@ const submit = () => {
     }
   
     addProduct(title, price, rating, image, featured, desc);
-
-    
 };
 
 const addProduct = async (title, price, rating, image, featured, desc) => {
@@ -52,7 +48,7 @@ const addProduct = async (title, price, rating, image, featured, desc) => {
     const response = await fetch(addUrl, options);
     const json = await response.json();
     location.reload();
-}
+};
 
 const logOutbtn = document.querySelector('.logOut');
 
@@ -60,7 +56,7 @@ logOutbtn.addEventListener('click', () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     document.location.href = './index.html'
-})
+});
 
 const input = document.querySelector('input');
 const search = document.querySelector('.searchbtn');
@@ -72,7 +68,7 @@ search.addEventListener('click', () => {
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});
 
 
 const searchBurger = document.querySelector('.searchbtnBurger');
@@ -82,4 +78,4 @@ searchBurger.addEventListener('click', () => {
     filterValue = burgerInput.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});

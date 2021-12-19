@@ -18,22 +18,8 @@ const getProducts = async () => {
     render()
 };
 
-// const render = () => {
-//     container.innerHTML = '';
-
-//     for (const product of data) {
-//         container.innerHTML += showProducts(product);
-//     }
-//     if (container.innerHTML === '') {
-//         container.innerHTML = "aslkdsadjaksd"
-//     }
-// }
-
-
-
 let filterValue;
 let filterTitle = [];
-
 
 search.addEventListener('click', () => {
     filterValue = input.value.trim();
@@ -46,7 +32,7 @@ search.addEventListener('click', () => {
     console.log(filterTitle)
 
     addToCart(filterTitle);    
-})
+});
 
 const searchBurger = document.querySelector('.searchbtnBurger');
 const burgerInput = document.querySelector('.burgerInput');
@@ -64,8 +50,7 @@ searchBurger.addEventListener('click', () => {
     console.log(filterTitle)
 
     addToCart(filterTitle); 
-})
-
+});
 
 const render = () => {
     
@@ -74,14 +59,12 @@ const render = () => {
     
     if (filterValue = window.sessionStorage.getItem('fubar', filterValue)){
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);
-        // filterTitle = data.filter(product => product.title.toLowerCase().includes(filterValue.toLowerCase()));
         console.log(filterTitle)
         filterTitle.forEach((product) => {
             container.innerHTML += showProducts(product);
         })
 
         addToCart(filterTitle);
-        
     }
 
     else {
@@ -93,14 +76,14 @@ const render = () => {
     }
     
     window.sessionStorage.removeItem('fubar');
-}
+};
 
 getProducts();
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!shoppingCart){
     localStorage.setItem("cart", JSON.stringify([]))
-}
+};
 
 const addToCart = (array) => {
     array.forEach((item) => {
@@ -109,4 +92,4 @@ const addToCart = (array) => {
             window.localStorage.setItem('cart', JSON.stringify(shoppingCart));
     })
     })
-}
+};

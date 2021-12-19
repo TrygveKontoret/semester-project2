@@ -43,19 +43,6 @@ export const starRating = (rating) => {
 
 export const showProducts = (item) => {
     const { img_url, title, price, rating, id } = item;
-
-    // return `
-        
-    //         <div class="card">
-    //             <img src="${img_url}" alt="${title}">
-    //             <h4>${title}</h4>
-    //             <p class="stars">${starRating(rating)}</p>
-    //             <p>£ ${price}</p>
-    //             <button id="${id}">Add to cart</button>
-    //         </div>
-        
-    // `   
-
     
     return `
             <div class="card">
@@ -89,16 +76,6 @@ export const containItem = (obj, array) => {
 };
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
-
-// module.exports = ({ env }) => ({
-//     host: env('HOST', '0.0.0.0'),
-//     port: env.int('PORT', 1337),
-//     admin: {
-//       auth: {
-//         secret: env('ADMIN_JWT_SECRET', '62985b4a18a64b3ecbd75c779e2a56cc'),
-//       },
-//     },
-//   });
   
 
 const tokenKey = 'token';

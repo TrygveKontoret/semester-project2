@@ -12,7 +12,6 @@ burger.addEventListener('click', () => {
     else {
         burgerNav.style.display = 'block';
     }
-
 });
 
 const loggedOut = document.querySelector('.loggedOut');
@@ -28,8 +27,7 @@ const logged = () => {
         loggedOut.style.display = 'flex';
         loggedIn.style.display = 'none';
     }
-
-}
+};
 
 logged();
 
@@ -46,7 +44,6 @@ const loggedBurger = () => {
         loggedOutBurger.style.display = 'flex';
         loggedInBurger.style.display = 'none';
     }
-
-}
+};
 
 loggedBurger();

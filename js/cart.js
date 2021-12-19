@@ -1,17 +1,12 @@
-import { findIndex, showProducts, starRating } from "./utils.js";
+import { findIndex, starRating } from "./utils.js";
 
 const container = document.querySelector('.cartCont');
 const showPrice = document.querySelector('.totalPrice');
-// const cartcounter = document.querySelector('.cartcounter');
-
-
-// const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
-
 
 const getCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!getCart){
     localStorage.setItem("cart", JSON.stringify([]))
-}
+};
 
 const price = () => {
     const priceList = uniqueProductArray.map((item)=>{
@@ -26,7 +21,7 @@ const price = () => {
     const reducer = (x, y) => x + y;
 
     return priceList.reduce(reducer)    
-}
+};
 
 const uniqueProductArray = getCart.filter((item, index) => {
     const product = JSON.stringify(item);
@@ -46,7 +41,7 @@ const remove = () => {
             render();
         })
     } 
-}
+};
 
 const render = () => {
     container.innerHTML = '';
@@ -57,7 +52,7 @@ const render = () => {
             <div class="card">
                 
                     <div class="prodImg">
-                        <img src ="${item.img_url}"/>
+                        <img src ="${item.img_url}" alt="${item.title}"/>
                     </div>
                     <a href="detail.html?id=${item.id}">
                         <div class="titleDesc"> 
@@ -75,9 +70,7 @@ const render = () => {
             </div>
         `
     }
-
     showPrice.innerHTML = `Total price: £ ` + price();
-    // cartcounter.innerHTML = `Total products in cart: ` + getCart.length;
 
     if (container.innerHTML === '') {
         container.innerHTML = `<h2> Cart is empty</h2>`
@@ -103,7 +96,7 @@ searchBurger.addEventListener('click', () => {
     filterValue = burgerInput.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});
 
 render();
 price();

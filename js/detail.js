@@ -34,7 +34,7 @@ const render = () => {
             <div class="singleProd">
                 <div class="left">
                     <h1>${product.title}</h1>
-                    <img id="${product.id+1}" src ="${product.img_url}"/>
+                    <img id="${product.id+1}" src ="${product.img_url}" alt="${item.title}"/>
                 </div>
                 <div class="right"> 
                     <div>
@@ -51,12 +51,12 @@ const render = () => {
     }
     funkyModal();
     addToCart();
-}
+};
 
 const shoppingCart = JSON.parse(window.localStorage.getItem('cart'));
 if(!shoppingCart){
     localStorage.setItem("cart", JSON.stringify([]))
-}
+};
 
 const addToCart = () => {
     for (const product of data) {
@@ -87,7 +87,7 @@ searchBurger.addEventListener('click', () => {
     filterValue = burgerInput.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
-})
+});
 
 const funkyModal = ()=> {
     for (const product of data) {

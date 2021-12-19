@@ -1,5 +1,5 @@
 import { url } from './api.js';
-import { fetchProducts, showMessage, token, findIndex, starRating } from './utils.js';
+import { fetchProducts, showMessage, token } from './utils.js';
 
 const query = document.location.search;
 const parameter = new URLSearchParams(query);
@@ -30,12 +30,11 @@ const getInputs = async () => {
     ratingOutput.value = json.rating;
 
     document.title = `GPU | Edit: ${json.title}`
-
 }
 
 getInputs();
 
-editButton.addEventListener('click', (title, price, rating, image, featured, desc) => {
+editButton.addEventListener('click', () => {
     submit();
 })
 
@@ -117,13 +116,11 @@ const search = document.querySelector('.searchbtn');
 
 let filterValue;
 
-
 search.addEventListener('click', () => { 
     filterValue = input.value.trim();
     window.sessionStorage.setItem('fubar', filterValue);
     document.location.href = './products.html';
 })
-
 
 const searchBurger = document.querySelector('.searchbtnBurger');
 const burgerInput = document.querySelector('.burgerInput');
