@@ -54,13 +54,31 @@
 }
 
 .cartHead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 20px 50px;
     margin: 50px 50px 0 50px;
     background-color: variables.$colorFeatured;
     color: white;
-    text-align: center;
+    text-align: right;
+}
 
+@media (max-width: 768px) {
+    
+    .cartCont, .editContainer {
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+
+            a, .titleDesc, .prodImg {
+                width: 100%;
+            }
+
+            div {
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
