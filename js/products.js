@@ -70,7 +70,7 @@ searchBurger.addEventListener('click', () => {
 const render = () => {
     
     filterValue = input.value.trim();
-    // container.innerHTML = '';
+    container.innerHTML = '';
     
     if (filterValue = window.sessionStorage.getItem('fubar', filterValue)){
         filterTitle = data.filter(product => product.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1);

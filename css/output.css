@@ -97,28 +97,8 @@ header .searchNav nav ul #active {
   font-size: 40px;
 }
 
-.textbox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 80%;
-  margin: 10% auto 7% auto;
-}
-.textbox h2 {
-  color: #0078F3;
-  margin-bottom: 20px;
-  font-size: 35px;
-}
-.textbox p {
-  color: white;
-  width: 50%;
-}
-
 .products {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   background-color: #1C1E21;
 }
 .products .content {
@@ -130,9 +110,9 @@ header .searchNav nav ul #active {
   padding: 50px 0;
 }
 .products .content .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
 }
 .products .content .container .card {
   display: flex;
@@ -152,7 +132,7 @@ header .searchNav nav ul #active {
   margin-bottom: 20px;
 }
 .products .content .container .card .stars {
-  padding-bottom: 10px;
+  padding-top: 15px;
 }
 .products .content .container .card p {
   font-size: 25px;
@@ -165,9 +145,6 @@ header .searchNav nav ul #active {
 
 .all {
   background-color: #222529;
-}
-.all .card {
-  margin: 0px 30px;
 }
 .all h1 {
   color: white;
@@ -230,6 +207,14 @@ button:active {
 }
 .adminNav button {
   margin-bottom: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  background-color: #2C2F33;
 }
 
 @media (max-width: 768px) {
