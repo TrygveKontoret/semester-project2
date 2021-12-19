@@ -26,7 +26,7 @@ const price = () => {
 const uniqueProductArray = getCart.filter((item, index) => {
     const product = JSON.stringify(item);
     return index === getCart.findIndex(obj => {
-      return JSON.stringify (obj) === product;
+        return JSON.stringify (obj) === product;
     });
 });
 
