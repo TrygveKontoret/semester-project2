@@ -20,6 +20,8 @@ p {
 
 body {
     background-color: variables.$colorBackground;
+    // min-height: 100vh;
+    // height: 100%;
 }
 
 h1 {
@@ -170,7 +172,6 @@ header {
 
             .card:hover {
                 transition: 0.5s;
-                // border: 2px solid white;
                 transform: scale(1.1);
             }
         }
@@ -179,14 +180,6 @@ header {
 
 .all {
     background-color: variables.$colorBackground;
-
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-
-    // .card {
-    //     margin: 0px 30px;
-    // }
 
     h1 {
         color: white;
@@ -218,6 +211,7 @@ button:active {
     flex-direction: column;
     align-items: center;
     color: white;
+    height: 80vh;
     
     h1 {
         margin-bottom: 20px;
@@ -268,7 +262,9 @@ footer {
     justify-content: center;
     align-items: center;
     height: 75px;
-    background-color: variables.$colorNav;
+    border-top: 2px solid white;
+    margin-top: 20px;
+    background-color: variables.$colorBackground;
 }
 
 

@@ -51,7 +51,7 @@ const addProduct = async (title, price, rating, image, featured, desc) => {
 
     const response = await fetch(addUrl, options);
     const json = await response.json();
-    // location.reload();
+    location.reload();
 }
 
 const logOutbtn = document.querySelector('.logOut');
