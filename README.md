@@ -43,7 +43,7 @@ yarn
 To run the app, run the following commands:
 
 ```bash
-yarn start
+Open in Live Server
 ```
 
 ## Contact
