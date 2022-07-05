@@ -21,6 +21,10 @@ The website is responsive on all devices.
 - Strapi
 - Sass
 
+## Hosted site
+
+https://hopeful-bohr-13cfae.netlify.app/
+
 ## Getting Started
 
 ### Installing
